@@ -62,6 +62,6 @@ export CCPP_SUITES="${CCPP_SUITES:0: -1}"  # Remove comma after last suite.
 ./build.sh || echo "FAIL:  build_forecast.sh failed, see ${cwd}/logs/build_forecast.log"
 
 #---------------------------------------------------------------------------------
-# Copy executable (named ufs_weather_model) to tests dir so workflow can find it
+# Copy executable (named ufs_model) to tests dir so workflow can find it
 #---------------------------------------------------------------------------------
-cp ${model_top_dir}/ufs_weather_model ${model_top_dir}/tests/fv3.exe
+cp ${model_top_dir}/build/ufs_model ${model_top_dir}/tests/fv3.exe
