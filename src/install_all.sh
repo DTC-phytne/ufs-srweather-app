@@ -34,15 +34,15 @@ $Build_post && {
 #------------------------------------
 $Build_UFS_UTILS && {
 # ${CP} regional_utils.fd/exec/global_chgres            ../exec/regional_chgres.x
- ${CP} UFS_UTILS/exec/chgres_cube                      ../exec/chgres_cube.exe
- ${CP} UFS_UTILS/exec/orog                             ../exec/orog.x
+ ${CP} UFS_UTILS/exec/chgres_cube                      ../exec/chgres_cube
+ ${CP} UFS_UTILS/exec/orog                             ../exec/orog
  ${CP} UFS_UTILS/exec/sfc_climo_gen                    ../exec/sfc_climo_gen
  ${CP} UFS_UTILS/exec/regional_esg_grid                ../exec/regional_esg_grid
  ${CP} UFS_UTILS/exec/make_hgrid                       ../exec/make_hgrid
  ${CP} UFS_UTILS/exec/make_solo_mosaic                 ../exec/make_solo_mosaic
  ${CP} UFS_UTILS/exec/fregrid                          ../exec/fregrid
  ${CP} UFS_UTILS/exec/filter_topo                      ../exec/filter_topo
- ${CP} UFS_UTILS/exec/shave                            ../exec/shave.x
+ ${CP} UFS_UTILS/exec/shave                            ../exec/shave
  ${CP} UFS_UTILS/exec/global_equiv_resol               ../exec/global_equiv_resol
 }
 
