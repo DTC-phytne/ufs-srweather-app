@@ -11,9 +11,9 @@ else
   export MOD_PATH=${cwd}/lib/modulefiles
 fi
 
-# Check final exec folder exists
-if [ ! -d "../exec" ]; then
-  mkdir ../exec
+# Check final bin folder exists
+if [ ! -d "../bin" ]; then
+  mkdir ../bin
 fi
 
 cd EMC_post

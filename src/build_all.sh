@@ -29,9 +29,9 @@ if [ ! -d $logs_dir  ]; then
 fi
 
 # Check final exec folder exists
-if [ ! -d "../exec" ]; then
-  echo "Creating ../exec folder"
-  mkdir ../exec
+if [ ! -d "../bin" ]; then
+  echo "Creating ../bin folder"
+  mkdir ../bin
 fi
 
 #------------------------------------
