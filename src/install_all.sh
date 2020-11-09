@@ -20,7 +20,7 @@ fi
 #------------------------------------
 # install forecast
 #------------------------------------
-${CP} ufs_weather_model/ufs_weather_model              ../bin/fv3_gfs.x
+${CP} ufs_weather_model/ufs_weather_model              ../bin/NEMS.exe
 
 #------------------------------------
 # install post
