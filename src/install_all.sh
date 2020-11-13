@@ -33,17 +33,16 @@ $Build_post && {
 # install needed utilities from UFS_UTILS.
 #------------------------------------
 $Build_UFS_UTILS && {
-# ${CP} regional_utils.fd/exec/global_chgres            ../bin/regional_chgres.x
  ${CP} UFS_UTILS/exec/chgres_cube                      ../bin/chgres_cube
- ${CP} UFS_UTILS/exec/orog                             ../bin/orog
- ${CP} UFS_UTILS/exec/sfc_climo_gen                    ../bin/sfc_climo_gen
- ${CP} UFS_UTILS/exec/regional_esg_grid                ../bin/regional_esg_grid
+ ${CP} UFS_UTILS/exec/filter_topo                      ../bin/filter_topo
+ ${CP} UFS_UTILS/exec/global_equiv_resol               ../bin/global_equiv_resol
  ${CP} UFS_UTILS/exec/make_hgrid                       ../bin/make_hgrid
  ${CP} UFS_UTILS/exec/make_solo_mosaic                 ../bin/make_solo_mosaic
- ${CP} UFS_UTILS/exec/fregrid                          ../bin/fregrid
- ${CP} UFS_UTILS/exec/filter_topo                      ../bin/filter_topo
+ ${CP} UFS_UTILS/exec/orog                             ../bin/orog
+ ${CP} UFS_UTILS/exec/regional_esg_grid                ../bin/regional_esg_grid
+ ${CP} UFS_UTILS/exec/sfc_climo_gen                    ../bin/sfc_climo_gen
  ${CP} UFS_UTILS/exec/shave                            ../bin/shave
- ${CP} UFS_UTILS/exec/global_equiv_resol               ../bin/global_equiv_resol
+ ${CP} UFS_UTILS/exec/shave                            ../bin/vcoord_gen
 }
 
 #------------------------------------
