@@ -46,5 +46,5 @@ setenv CMAKE_Platform hera.intel
 
 #mkdir build
 #cd build
-#cmake .. -DCMAKE_INSTALL_PREFIX ..
+#cmake .. -DCMAKE_INSTALL_PREFIX=..
 #make -j 4
