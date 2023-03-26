@@ -244,7 +244,7 @@ mv_vrfy "${raw_orog_fp_orig}" "${raw_orog_fp}"
 #
 #-----------------------------------------------------------------------
 #
-if [ "${CCPP_PHYS_SUITE}" = "FV3_HRRR" ]; then
+#if [ "${CCPP_PHYS_SUITE}" = "FV3_GFS_v17_p8_13km_gsl_gwd" || "${CCPP_PHYS_SUITE}" = "FV3_GFS_v17_p8_13km_no_gsl_gwd" || "${CCPP_PHYS_SUITE}" = "FV3_GFS_v17_p8_3km_gsl_gwd" || "${CCPP_PHYS_SUITE}" = "FV3_GFS_v17_p8_3km_no_gsl_gwd" || "${CCPP_PHYS_SUITE}" = "FV3_RRFS_v1beta_unified_ugwp" ]; then
   DATA="${DATA:-${OROG_DIR}/temp_orog_data}"
   mkdir_vrfy -p ${DATA}
   cd_vrfy ${DATA}
@@ -294,7 +294,7 @@ returned with nonzero exit code:
           "${CRES}${DOT_OR_USCORE}oro_data_ls.tile${TILE_RGNL}.halo${NH0}.nc" \
           "${OROG_DIR}"
  
-fi
+#fi
 #
 #-----------------------------------------------------------------------
 #

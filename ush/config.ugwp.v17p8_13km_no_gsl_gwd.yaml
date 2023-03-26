@@ -1,0 +1,51 @@
+metadata:
+  description: >-
+    Test GFS_v17_p8 13km for sample community config
+user:
+  RUN_ENVIR: community
+  MACHINE: hera
+  ACCOUNT: ufs-phys
+platform:
+  MODEL: FV3_GFS_v17_p8_CONUS_13km
+  MET_INSTALL_DIR: ""
+  METPLUS_PATH: ""
+  CCPA_OBS_DIR: ""
+  MRMS_OBS_DIR: ""
+  NDAS_OBS_DIR: ""
+workflow:
+  USE_CRON_TO_RELAUNCH: true
+  CRON_RELAUNCH_INTVL_MNTS: 5
+  EXPT_BASEDIR: "/home/Weiwei.Li/UniPhy/UniPhy/ugwd/test_imp/expt_dirs_GFS_v17_p8"
+  EXPT_SUBDIR: CONUS_13km_GFS_v17_p8_no_gsl_gwd
+  CCPP_PHYS_SUITE: FV3_GFS_v17_p8_13km_no_gsl_gwd
+  DATE_FIRST_CYCL: '2019061518'
+  DATE_LAST_CYCL: '2019061518'
+  FCST_LEN_HRS: 12
+  PREEXISTING_DIR_METHOD: rename
+  VERBOSE: true
+  COMPILER: intel
+workflow_switches:
+  RUN_TASK_MAKE_GRID: true
+  RUN_TASK_MAKE_OROG: true
+  RUN_TASK_MAKE_SFC_CLIMO: true
+  RUN_TASK_GET_OBS_CCPA: false
+  RUN_TASK_GET_OBS_MRMS: false
+  RUN_TASK_GET_OBS_NDAS: false
+  RUN_TASK_VX_GRIDSTAT: false
+  RUN_TASK_VX_POINTSTAT: false
+  RUN_TASK_VX_ENSGRID: false
+  RUN_TASK_VX_ENSPOINT: false
+task_get_extrn_ics:
+  EXTRN_MDL_NAME_ICS: FV3GFS
+  FV3GFS_FILE_FMT_ICS: grib2
+task_get_extrn_lbcs:
+  EXTRN_MDL_NAME_LBCS: FV3GFS
+  LBC_SPEC_INTVL_HRS: 6
+  FV3GFS_FILE_FMT_LBCS: grib2
+task_run_fcst:
+  WTIME_RUN_FCST: 02:00:00
+  QUILTING: true
+  PREDEF_GRID_NAME: RRFS_CONUS_13km
+global:
+  DO_ENSEMBLE: false
+  NUM_ENS_MEMBERS: 2

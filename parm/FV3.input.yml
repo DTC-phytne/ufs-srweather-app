@@ -33,7 +33,42 @@ FV3_RRFS_v1beta:
     iopt_trs: 2
     lsm: 2
     lsoil_lsm: 4
-    ldiag_ugwp: True
+    ldiag_ugwp: False
+
+FV3_RRFS_v1beta_unified_ugwp:
+  gfs_physics_nml:
+    <<: *RRFS_v1beta_phys
+    do_deep: False
+    do_mynnsfclay: True
+    imfdeepcnv: -1
+    imfshalcnv: -1
+    iopt_alb: 2
+    iopt_btr: 1
+    iopt_crs: 1
+    iopt_dveg: 2
+    iopt_frz: 1
+    iopt_inf: 1
+    iopt_rad: 1
+    iopt_run: 1
+    iopt_sfc: 1
+    iopt_snf: 4
+    iopt_stc: 1
+    iopt_tbot: 2
+    iopt_trs: 2
+    lsm: 2
+    lsoil_lsm: 4
+    do_ugwp: False
+    gwd_opt: 2
+    do_ugwp_v0: False
+    do_ugwp_v1: False
+    do_ugwp_v0_orog_only: False
+    do_ugwp_v0_nst_only: True
+    do_gsl_drag_ls_bl: True
+    do_gsl_drag_ss: True
+    do_gsl_drag_tofd: True
+    do_ugwp_v1_orog_only: False
+    cdmbgwd: [1.0,1.0,1.0,1.0]
+
 FV3_WoFS_v0:
   gfs_physics_nml:
     do_deep: False
@@ -127,7 +162,7 @@ FV3_GFS_2017_gfdlmp:
     imfdeepcnv: 2
     imfshalcnv: 2
     imp_physics: 11
-    ldiag_ugwp: True
+    ldiag_ugwp: False
     lgfdlmprad: True
     lheatstrg: !!python/none
     lndp_type: !!python/none
@@ -212,7 +247,7 @@ FV3_GFS_2017_gfdlmp_regional:
     iopt_stc: 1
     iopt_tbot: 2
     iopt_trs: 2
-    ldiag_ugwp: True
+    ldiag_ugwp: False
     lgfdlmprad: True
     lheatstrg: False
     lndp_type: 0
@@ -416,7 +451,7 @@ FV3_GFS_v16:
     ldebug: False
   surf_map_nml: !!python/none
 
-FV3_GFS_v17_p8:
+FV3_GFS_v17_p8_13km_gsl_gwd:
   cires_ugwp_nml:
     launch_level: 27
   fv_core_nml:
@@ -442,23 +477,22 @@ FV3_GFS_v17_p8:
     dnats: 0
   gfs_physics_nml:
     <<: *gfs_v15_gfs_physics
-    cdmbgwd: [4.0,0.05,1.0,1.0]
+    cdmbgwd: [2.5,7.5,1.0,1.0]
+    do_ugwp: False
+    gwd_opt: 2
+    do_ugwp_v0: False
+    do_ugwp_v1: False
+    do_ugwp_v0_orog_only: False
+    do_ugwp_v0_nst_only: True
+    do_gsl_drag_ls_bl: True
+    do_gsl_drag_ss: True
+    do_gsl_drag_tofd: True
+    do_ugwp_v1_orog_only: False
     satmedmf: True
     isatmedmf: 1
     do_deep: True
     do_mynnsfclay: False
     do_mynnedmf: False
-    do_ugwp: False
-    do_tofd: False
-    gwd_opt: 2
-    do_ugwp_v0: True
-    do_ugwp_v1: False
-    do_ugwp_v0_orog_only: False
-    do_ugwp_v0_nst_only: False
-    do_gsl_drag_ls_bl: False
-    do_gsl_drag_ss: True
-    do_gsl_drag_tofd: False
-    do_ugwp_v1_orog_only: False
     fhswr: 1200.0
     fhlwr: 1200.0
     iaer: 5111
@@ -478,7 +512,238 @@ FV3_GFS_v17_p8:
     iopt_stc: 3
     iopt_tbot: 2
     iovr: 3
-    ldiag_ugwp: True
+    ldiag_ugwp: False
+    lgfdlmprad: False
+    lheatstrg: False
+    lsm: 2
+    lsoil_lsm: 4
+    ltaerosol: False
+    lradar: False
+    dt_inner: 300.
+    sedi_semi: True
+    decfl: 10
+    shal_cnv: True
+    cnvgwd: True
+    cnvcld: True
+    iems: 2
+    ialb: 2
+
+FV3_GFS_v17_p8_3km_gsl_gwd:
+  cires_ugwp_nml:
+    launch_level: 27
+  fv_core_nml:
+    <<: *gfs_v15_fv_core
+    agrid_vel_rst: false
+    d2_bg_k1: 0.2
+    d2_bg_k2: 0.0
+    fv_sg_adj: 450
+    hord_dp: -5
+    hord_mt: 5
+    hord_tm: 5
+    hord_vt: 5
+    k_split: 6
+    make_nh: False
+    do_sat_adj: False
+    n_split: 6
+    n_sponge: 10
+    na_init: 0
+    nudge_dz: False
+    res_latlon_dynamics: ''
+    rf_fast: !!python/none
+    tau: 10.0
+    dnats: 0
+  gfs_physics_nml:
+    <<: *gfs_v15_gfs_physics
+    cdmbgwd: [1.0,1.0,1.0,1.0]
+    do_ugwp: False
+    gwd_opt: 2
+    do_ugwp_v0: False
+    do_ugwp_v1: False
+    do_ugwp_v0_orog_only: False
+    do_ugwp_v0_nst_only: True
+    do_gsl_drag_ls_bl: True
+    do_gsl_drag_ss: True
+    do_gsl_drag_tofd: True
+    do_ugwp_v1_orog_only: False
+    satmedmf: True
+    isatmedmf: 1
+    do_deep: True
+    do_mynnsfclay: False
+    do_mynnedmf: False
+    fhswr: 1200.0
+    fhlwr: 1200.0
+    iaer: 5111
+    icliq_sw: 2
+    imfdeepcnv: 2
+    imfshalcnv: 2
+    iopt_alb: 1
+    iopt_btr: 1
+    iopt_crs: 2
+    iopt_dveg: 4
+    iopt_frz: 1
+    iopt_inf: 1
+    iopt_rad: 3
+    iopt_run: 1
+    iopt_sfc: 3
+    iopt_snf: 4
+    iopt_stc: 3
+    iopt_tbot: 2
+    iovr: 3
+    ldiag_ugwp: False
+    lgfdlmprad: False
+    lheatstrg: False
+    lsm: 2
+    lsoil_lsm: 4
+    ltaerosol: False
+    lradar: False
+    dt_inner: 300.
+    sedi_semi: True
+    decfl: 10
+    shal_cnv: True
+    cnvgwd: True
+    cnvcld: True
+    iems: 2
+    ialb: 2
+
+FV3_GFS_v17_p8_13km_no_gsl_gwd:
+  cires_ugwp_nml:
+    launch_level: 27
+  fv_core_nml:
+    <<: *gfs_v15_fv_core
+    agrid_vel_rst: false
+    d2_bg_k1: 0.2
+    d2_bg_k2: 0.0
+    fv_sg_adj: 450
+    hord_dp: -5
+    hord_mt: 5
+    hord_tm: 5
+    hord_vt: 5
+    k_split: 6
+    make_nh: False
+    do_sat_adj: False
+    n_split: 6
+    n_sponge: 10
+    na_init: 0
+    nudge_dz: False
+    res_latlon_dynamics: ''
+    rf_fast: !!python/none
+    tau: 10.0
+    dnats: 0
+  gfs_physics_nml:
+    <<: *gfs_v15_gfs_physics
+    cdmbgwd: [2.5,7.5,1.0,1.0]
+    do_ugwp: False
+    gwd_opt: 2
+    do_ugwp_v0: True
+    do_ugwp_v1: False
+    do_ugwp_v0_orog_only: False
+    do_ugwp_v0_nst_only: False
+    do_gsl_drag_ls_bl: False
+    do_gsl_drag_ss: True
+    do_gsl_drag_tofd: False
+    do_ugwp_v1_orog_only: False
+    satmedmf: True
+    isatmedmf: 1
+    do_deep: True
+    do_mynnsfclay: False
+    do_mynnedmf: False
+    fhswr: 1200.0
+    fhlwr: 1200.0
+    iaer: 5111
+    icliq_sw: 2
+    imfdeepcnv: 2
+    imfshalcnv: 2
+    iopt_alb: 1
+    iopt_btr: 1
+    iopt_crs: 2
+    iopt_dveg: 4
+    iopt_frz: 1
+    iopt_inf: 1
+    iopt_rad: 3
+    iopt_run: 1
+    iopt_sfc: 3
+    iopt_snf: 4
+    iopt_stc: 3
+    iopt_tbot: 2
+    iovr: 3
+    ldiag_ugwp: False
+    lgfdlmprad: False
+    lheatstrg: False
+    lsm: 2
+    lsoil_lsm: 4
+    ltaerosol: False
+    lradar: False
+    dt_inner: 300.
+    sedi_semi: True
+    decfl: 10
+    shal_cnv: True
+    cnvgwd: True
+    cnvcld: True
+    iems: 2
+    ialb: 2
+
+FV3_GFS_v17_p8_3km_no_gsl_gwd:
+  cires_ugwp_nml:
+    launch_level: 27
+  fv_core_nml:
+    <<: *gfs_v15_fv_core
+    agrid_vel_rst: false
+    d2_bg_k1: 0.2
+    d2_bg_k2: 0.0
+    fv_sg_adj: 450
+    hord_dp: -5
+    hord_mt: 5
+    hord_tm: 5
+    hord_vt: 5
+    k_split: 6
+    make_nh: False
+    do_sat_adj: False
+    n_split: 6
+    n_sponge: 10
+    na_init: 0
+    nudge_dz: False
+    res_latlon_dynamics: ''
+    rf_fast: !!python/none
+    tau: 10.0
+    dnats: 0
+  gfs_physics_nml:
+    <<: *gfs_v15_gfs_physics
+    cdmbgwd: [1.0,1.0,1.0,1.0]
+    do_ugwp: False
+    gwd_opt: 2
+    do_ugwp_v0: True
+    do_ugwp_v1: False
+    do_ugwp_v0_orog_only: False
+    do_ugwp_v0_nst_only: False
+    do_gsl_drag_ls_bl: False
+    do_gsl_drag_ss: True
+    do_gsl_drag_tofd: False
+    do_ugwp_v1_orog_only: False
+    satmedmf: True
+    isatmedmf: 1
+    do_deep: True
+    do_mynnsfclay: False
+    do_mynnedmf: False
+    fhswr: 1200.0
+    fhlwr: 1200.0
+    iaer: 5111
+    icliq_sw: 2
+    imfdeepcnv: 2
+    imfshalcnv: 2
+    iopt_alb: 1
+    iopt_btr: 1
+    iopt_crs: 2
+    iopt_dveg: 4
+    iopt_frz: 1
+    iopt_inf: 1
+    iopt_rad: 3
+    iopt_run: 1
+    iopt_sfc: 3
+    iopt_snf: 4
+    iopt_stc: 3
+    iopt_tbot: 2
+    iovr: 3
+    ldiag_ugwp: False
     lgfdlmprad: False
     lheatstrg: False
     lsm: 2
