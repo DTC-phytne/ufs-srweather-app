@@ -631,7 +631,7 @@ FV3_GFS_v17_p8_13km_no_gsl_gwd:
     dnats: 0
   gfs_physics_nml:
     <<: *gfs_v15_gfs_physics
-    cdmbgwd: [2.5,7.5,1.0,1.0]
+    cdmbgwd: [4.0,0.15,1.0,1.0]
     do_ugwp: False
     gwd_opt: 2
     do_ugwp_v0: True
@@ -708,7 +708,7 @@ FV3_GFS_v17_p8_3km_no_gsl_gwd:
     dnats: 0
   gfs_physics_nml:
     <<: *gfs_v15_gfs_physics
-    cdmbgwd: [1.0,1.0,1.0,1.0]
+    cdmbgwd: [4.0,0.05,1.0,1.0]
     do_ugwp: False
     gwd_opt: 2
     do_ugwp_v0: True
