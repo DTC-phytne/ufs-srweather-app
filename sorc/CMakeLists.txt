@@ -38,7 +38,7 @@ if (BUILD_UFS)
   list(APPEND TARGET_LIST UFS)
 
   if(NOT CCPP_SUITES)
-    set(CCPP_SUITES "FV3_GFS_2017_gfdlmp,FV3_GFS_2017_gfdlmp_regional,FV3_GFS_v15p2,FV3_GFS_v16,FV3_RRFS_v1beta,FV3_HRRR,FV3_GFS_v15_thompson_mynn_lam3km,FV3_WoFS_v0")
+    set(CCPP_SUITES "FV3_GFS_2017_gfdlmp,FV3_GFS_2017_gfdlmp_regional,FV3_GFS_v15p2,FV3_GFS_v16,FV3_RRFS_v1beta,FV3_HRRR,FV3_GFS_v15_thompson_mynn_lam3km,FV3_WoFS_v0,FV3_GFS_v17_p8_13km_gsl_gwd,FV3_GFS_v17_p8_3km_gsl_gwd,FV3_GFS_v17_p8_13km_no_gsl_gwd,FV3_GFS_v17_p8_3km_no_gsl_gwd,FV3_RRFS_v1beta_unified_ugwp")
   endif()
   
   if(NOT APP)
