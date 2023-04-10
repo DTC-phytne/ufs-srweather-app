@@ -181,11 +181,11 @@ def link_fix(verbose, file_group):
             f"C*{DOT_OR_USCORE}oro_data.tile{TILE_RGNL}.halo{NH0}.nc",
             f"C*{DOT_OR_USCORE}oro_data.tile{TILE_RGNL}.halo{NH4}.nc",
         ]
-        if CCPP_PHYS_SUITE == "FV3_HRRR":
-            fns += [
-                f"C*{DOT_OR_USCORE}oro_data_ss.tile{TILE_RGNL}.halo{NH0}.nc",
-                f"C*{DOT_OR_USCORE}oro_data_ls.tile{TILE_RGNL}.halo{NH0}.nc",
-            ]
+        #if CCPP_PHYS_SUITE == "FV3_HRRR":
+        fns += [
+            f"C*{DOT_OR_USCORE}oro_data_ss.tile{TILE_RGNL}.halo{NH0}.nc",
+            f"C*{DOT_OR_USCORE}oro_data_ls.tile{TILE_RGNL}.halo{NH0}.nc",
+        ]
         fps = [os.path.join(OROG_DIR, itm) for itm in fns]
         run_task = f"{RUN_TASK_MAKE_OROG}"
     #
