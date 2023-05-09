@@ -33,7 +33,8 @@ FV3_RRFS_v1beta:
     iopt_trs: 2
     lsm: 2
     lsoil_lsm: 4
-    ldiag_ugwp: False
+    ldiag_ugwp: True
+    ldiag3d: True
 
 FV3_RRFS_v1beta_unified_ugwp:
   gfs_physics_nml:
@@ -512,7 +513,8 @@ FV3_GFS_v17_p8_13km_gsl_gwd:
     iopt_stc: 3
     iopt_tbot: 2
     iovr: 3
-    ldiag_ugwp: False
+    ldiag_ugwp: True
+    ldiag3d: True
     lgfdlmprad: False
     lheatstrg: False
     lsm: 2
@@ -589,7 +591,8 @@ FV3_GFS_v17_p8_3km_gsl_gwd:
     iopt_stc: 3
     iopt_tbot: 2
     iovr: 3
-    ldiag_ugwp: False
+    ldiag_ugwp: True
+    ldiag3d: True
     lgfdlmprad: False
     lheatstrg: False
     lsm: 2
@@ -666,7 +669,8 @@ FV3_GFS_v17_p8_13km_no_gsl_gwd:
     iopt_stc: 3
     iopt_tbot: 2
     iovr: 3
-    ldiag_ugwp: False
+    ldiag_ugwp: True
+    ldiag3d: True
     lgfdlmprad: False
     lheatstrg: False
     lsm: 2
@@ -743,7 +747,8 @@ FV3_GFS_v17_p8_3km_no_gsl_gwd:
     iopt_stc: 3
     iopt_tbot: 2
     iovr: 3
-    ldiag_ugwp: False
+    ldiag_ugwp: True
+    ldiag3d: True
     lgfdlmprad: False
     lheatstrg: False
     lsm: 2
